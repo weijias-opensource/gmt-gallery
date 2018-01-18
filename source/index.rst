@@ -5,6 +5,7 @@
 
 Home
 ====
+I will be giving numerous examples of typical usage of pyGMT programs.
 
 ----
 
@@ -12,6 +13,8 @@ Home
    :maxdepth: 1
     
 About me.
+
+----
 
 :doc:`Click here to review the galleries. <gallery>`
 ====================================================
