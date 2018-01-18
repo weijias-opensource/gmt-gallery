@@ -1,5 +1,5 @@
-Python script 
-=============
+Moho depth clipped by coastline 
+===============================
 
 .. image:: moho_thick.jpg
 	:width: 600 px
