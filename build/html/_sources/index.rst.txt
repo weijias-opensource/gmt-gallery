@@ -3,17 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-gmt-gallery
-===========
+Home
+====
 
 ----
 
 .. toctree::
    :maxdepth: 1
     
-.. csv-table:: 
-   :widths: 30, 30, 30
+About me.
 
-   .. image:: moho_thick.jpg, , 
-   , .. image:: moho_thick.jpg,
- 
+:doc:`Click here to review the galleries. <gallery>`
+====================================================
