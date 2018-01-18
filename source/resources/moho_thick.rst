@@ -3,6 +3,8 @@ Python script
 
 .. image:: moho_thick.jpg
 	:width: 600 px
+	
+Keywords: clip, coastline, scale, image
 
 .. code-block:: python
 	:linenos:
