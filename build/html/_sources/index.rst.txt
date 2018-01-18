@@ -10,6 +10,10 @@ gmt-gallery
 
 .. toctree::
    :maxdepth: 1
-   :caption: Table of Contents:
-   
-   helloworld
+    
+.. csv-table:: 
+   :widths: 30, 30, 30
+
+   .. image:: moho_thick.jpg, , 
+   , .. image:: moho_thick.jpg,
+ 
