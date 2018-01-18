@@ -12,9 +12,9 @@ I will be giving numerous examples of typical usage of pyGMT programs.
 .. toctree::
    :maxdepth: 1
     
-About me.
+Introduction here. Coming soon.
 
 ----
 
-:doc:`Click here to review the galleries. <gallery>`
+:doc:`Click here to view the galleries. <gallery>`
 ====================================================
