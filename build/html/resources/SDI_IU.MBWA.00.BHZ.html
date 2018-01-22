@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Seismic daylight imaging &mdash; gmt-gallery  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="gmt-gallery  documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> gmt-gallery
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Seismic daylight imaging</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gmt-gallery</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Seismic daylight imaging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/resources/SDI_IU.MBWA.00.BHZ.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="seismic-daylight-imaging">
+<h1>Seismic daylight imaging<a class="headerlink" href="#seismic-daylight-imaging" title="Permalink to this headline">¶</a></h1>
+<p>Description:
+Seismic daylight imaging results of IU.MBWA in Western Australian Craton.</p>
+<a class="reference internal image-reference" href="../_images/SDI_IU.MBWA.00.BHZ.jpg"><img alt="../_images/SDI_IU.MBWA.00.BHZ.jpg" src="../_images/SDI_IU.MBWA.00.BHZ.jpg" style="width: 600px;" /></a>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pythoon</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">plot P reflectivity and IF</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">gmt</span> <span class="kn">as</span> <span class="nn">gmt5</span>
+<span class="kn">from</span> <span class="nn">obspy</span> <span class="kn">import</span> <span class="n">read</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">proc_sac</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">xyfile</span><span class="p">,</span> <span class="n">idn</span><span class="p">,</span> <span class="n">scale</span><span class="p">):</span>
+
+        <span class="n">tr</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="nb">file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">npts</span><span class="p">)</span> <span class="o">*</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">delta</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">data</span>
+
+        <span class="n">d</span> <span class="o">=</span> <span class="n">d</span><span class="o">/</span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">d</span><span class="p">))</span><span class="o">*</span><span class="n">scale</span> <span class="o">+</span> <span class="n">idn</span>
+
+        <span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">xyfile</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)):</span>
+                <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="si">%f</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">read_vel</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">xyfile</span><span class="p">):</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                <span class="n">lst</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+        <span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">xyfile</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">:</span>
+                <span class="n">row</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+                <span class="n">dep</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+                <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%f</span><span class="se">\t</span><span class="si">%f</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">dep</span><span class="p">))</span>
+        <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">plot_ac</span><span class="p">(</span><span class="n">fileid</span><span class="p">,</span> <span class="n">datapath</span><span class="p">,</span> <span class="n">datapath2</span><span class="p">,</span> <span class="n">figpath</span><span class="p">):</span>
+
+        <span class="n">acfile</span>  <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.sac.d&quot;</span>
+        <span class="n">acmfile</span> <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.norm.d&quot;</span>
+        <span class="n">agcfile</span> <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.agc.d&quot;</span>
+        <span class="n">ifnfile</span> <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.ifn.d&quot;</span>
+        <span class="n">iffile</span> <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.if.d&quot;</span>
+
+        <span class="n">tr</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">acfile</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">fileid</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">id</span>
+
+        <span class="n">vpfile</span> <span class="o">=</span> <span class="n">datapath2</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.vpn&quot;</span>
+        <span class="n">vsfile</span> <span class="o">=</span> <span class="n">datapath2</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.vsv&quot;</span>
+        <span class="n">anfile</span> <span class="o">=</span> <span class="n">datapath2</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.rani&quot;</span>
+        <span class="n">qsfile</span> <span class="o">=</span> <span class="n">datapath2</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.qsi&quot;</span>
+        <span class="n">difile</span> <span class="o">=</span> <span class="n">datapath2</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span>
+        <span class="n">refile</span> <span class="o">=</span> <span class="n">datapath2</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.res&quot;</span>
+
+        <span class="n">psfile</span>  <span class="o">=</span> <span class="n">figpath</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileid</span> <span class="o">+</span> <span class="s2">&quot;.ps&quot;</span>
+
+        <span class="k">print</span> <span class="n">psfile</span>
+
+        <span class="n">stnm</span> <span class="o">=</span> <span class="n">fileid</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># moho depth and lab depth</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">difile</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                <span class="n">line</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">mdep</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">ldep</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+
+        <span class="k">try</span><span class="p">:</span>
+                <span class="n">mdep</span> <span class="o">=</span> <span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">t2</span>
+        <span class="k">except</span><span class="p">:</span>
+                <span class="n">mdep</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+        <span class="c1"># print tr.stats.sac.t5, tr.stats.sac.t4</span>
+
+
+        <span class="k">try</span><span class="p">:</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">figpath</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+
+        <span class="n">gmt</span> <span class="o">=</span> <span class="n">gmt5</span><span class="o">.</span><span class="n">Gmt</span><span class="p">()</span>
+
+        <span class="c1"># gmt.set(&quot;PS_LINE_CAP&quot;, &quot;round&quot;)</span>
+
+        <span class="n">gmt</span><span class="o">.</span><span class="n">comment</span><span class="p">(</span><span class="s2">&quot;base&quot;</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psbasemap&quot;</span><span class="p">,</span> <span class="s2">&quot;-JX5c/-8c -R-1/4/0/300 -Bya50f10+l&#39;Depth [km]&#39; -BWsNe+t&#39;</span><span class="si">%s</span><span class="s2">&#39; -K  -Bxcintfile+l&#39;P Reflectivity&#39; &gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stnm</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="c1"># gmt.cmd(&quot;pssac&quot;, &quot;-J -R %s %s %s -K -O -En -Q -M0.1 &gt;&gt; %s&quot; % (acfile, acmfile, ifnfile, psfile))</span>
+
+        <span class="n">proc_sac</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">acfile</span><span class="p">,</span> <span class="n">xyfile</span><span class="o">=</span><span class="s2">&quot;ac.xy&quot;</span><span class="p">,</span> <span class="n">idn</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;ac.xy -J -R -K -O -W1p &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+
+        <span class="c1"># proc_sac(file=acmfile, xyfile=&quot;acm.xy&quot;, idn=1.5, scale=0.5)</span>
+        <span class="c1"># gmt.cmd(&quot;psxy&quot;, &quot;acm.xy -J -R -K -O &gt;&gt; %s&quot; % (psfile))</span>
+
+        <span class="n">proc_sac</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">agcfile</span><span class="p">,</span> <span class="n">xyfile</span><span class="o">=</span><span class="s2">&quot;agc.xy&quot;</span><span class="p">,</span> <span class="n">idn</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;agc.xy -J -R -K -O -W1p &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+
+        <span class="n">proc_sac</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">ifnfile</span><span class="p">,</span> <span class="n">xyfile</span><span class="o">=</span><span class="s2">&quot;ifn.xy&quot;</span><span class="p">,</span> <span class="n">idn</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;ifn.xy -J -R -K -O -W1p &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+
+        <span class="c1"># proc_sac(file=iffile, xyfile=&quot;if.xy&quot;, idn=4, scale=1.0)</span>
+        <span class="c1"># gmt.cmd(&quot;psxy&quot;, &quot;if.xy -J -R -K -O -W0.5p &gt;&gt; %s&quot; % (psfile))</span>
+
+        <span class="c1"># plot label</span>
+        <span class="c1"># gmt.shell(&quot;echo 0.0 10.0 REF | gmt pstext -J -R -K -O -Ya0.5c &gt;&gt; %s&quot; % (psfile))</span>
+        <span class="c1"># gmt.shell(&quot;echo 1.5 10.0 AGC | gmt pstext -J -R -K -O -Ya0.5c &gt;&gt; %s&quot; % (psfile))</span>
+        <span class="c1"># gmt.shell(&quot;echo 3.0 10.0 IF | gmt pstext -J -R -K -O -Ya0.5c &gt;&gt; %s&quot; % (psfile))</span>
+
+        <span class="c1"># plot moho and depth</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 5.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gsandybrown -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mdep</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 5.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gblue -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ldep</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+
+        <span class="k">try</span><span class="p">:</span>
+                <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 5.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gcyan -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">t5</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="c1"># gmt.shell(&quot;echo 3.0 %f | gmt psxy -J -R -K -O -S-10c -Ggreen -t50 -Wfat,green,. &gt;&gt; %s&quot; % (100, psfile))</span>
+        <span class="c1"># print mdep</span>
+
+
+        <span class="c1"># plot velocity</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psbasemap&quot;</span><span class="p">,</span> <span class="s2">&quot;-JX4c/-8c -R3/9/0/300 -Bxa1+l&#39;Velocity [km/s]&#39; -Bya50f10+l&#39;Depth [km]&#39; -BwsNe+t&#39;</span><span class="si">%s</span><span class="s2">&#39; -K -O -X5c &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stnm</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+
+        <span class="n">read_vel</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">vpfile</span><span class="p">,</span> <span class="n">xyfile</span><span class="o">=</span><span class="s2">&quot;vp.xy&quot;</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;vp.xy -J -R -K -O -W1p &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+
+        <span class="n">read_vel</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">vsfile</span><span class="p">,</span> <span class="n">xyfile</span><span class="o">=</span><span class="s2">&quot;vs.xy&quot;</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;vs.xy -J -R -K -O -W1p &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 4.5 20 Vs | gmt pstext -J -R -K -O &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 8.0 20 Vp | gmt pstext -J -R -K -O &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+
+        <span class="c1"># plot moho and depth</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 10.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gsandybrown -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mdep</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 10.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gblue -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ldep</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+                <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 10.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gcyan -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">t5</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="c1"># plot radial anisotropy</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psbasemap&quot;</span><span class="p">,</span> <span class="s2">&quot;-JX2c/-8c -R0.9/1.1/0/300 -Bxa0.1+l&#39;Radial Ani&#39; -Bya50f10+l&#39;Depth [km]&#39; -BwsNe+t&#39;</span><span class="si">%s</span><span class="s2">&#39; -K -O -X4.5c &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stnm</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="n">read_vel</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">anfile</span><span class="p">,</span> <span class="n">xyfile</span><span class="o">=</span><span class="s2">&quot;an.xy&quot;</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;an.xy -J -R -K -O -W1p &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;gridline.xy -J -R -K -O -W0.5p,- &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 10.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gblue -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ldep</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+                <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 5.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gcyan -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">t5</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="c1"># plot Attenuation</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psbasemap&quot;</span><span class="p">,</span> <span class="s2">&quot;-JX2c/-8c -R0/8/0/300 -Bxa2+l&#39;Attenuation&#39; -Bya50f10+l&#39;Depth [km]&#39; -BwsNe+t&#39;</span><span class="si">%s</span><span class="s2">&#39; -K -O -X2.6c &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stnm</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="n">read_vel</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">qsfile</span><span class="p">,</span> <span class="n">xyfile</span><span class="o">=</span><span class="s2">&quot;qs.xy&quot;</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;qs.xy -J -R -K -O -W1p &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 10.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gblue -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ldep</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+                <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 10.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gcyan -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">t5</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="c1"># plot Attenuation</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psbasemap&quot;</span><span class="p">,</span> <span class="s2">&quot;-JX2c/-8c -R2/5/0/300 -Bxa1+l&#39;Resistivity&#39; -Bya50f10+l&#39;Depth [km]&#39; -BwsNe+t&#39;</span><span class="si">%s</span><span class="s2">&#39; -K -O -X2.6c &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stnm</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="n">read_vel</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="n">refile</span><span class="p">,</span> <span class="n">xyfile</span><span class="o">=</span><span class="s2">&quot;res.xy&quot;</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;res.xy -J -R -K -O -W1p &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">psfile</span><span class="p">))</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 10.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gsandybrown -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mdep</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 10.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gblue -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ldep</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="k">try</span><span class="p">:</span>
+                <span class="n">gmt</span><span class="o">.</span><span class="n">shell</span><span class="p">(</span><span class="s2">&quot;echo 5.0 </span><span class="si">%f</span><span class="s2"> | gmt psxy -J -R -K -O -SB3p -Gcyan -t50  &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">tr</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">sac</span><span class="o">.</span><span class="n">t5</span><span class="p">,</span> <span class="n">psfile</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+
+        <span class="n">gmt</span><span class="o">.</span><span class="n">comment</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psxy&quot;</span><span class="p">,</span> <span class="s2">&quot;-J -R -O -T &gt;&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">psfile</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psconvert&quot;</span><span class="p">,</span> <span class="s2">&quot;-A -P -Tj </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">psfile</span><span class="p">)</span>
+        <span class="n">gmt</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;psconvert&quot;</span><span class="p">,</span> <span class="s2">&quot;-A -P -Tf </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">psfile</span><span class="p">)</span>
+
+        <span class="n">gmt</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+
+
+        <span class="k">pass</span>
+
+<span class="c1"># get stations</span>
+<span class="n">datapath</span> <span class="o">=</span> <span class="s2">&quot;SDI/stk/*.sac&quot;</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">datapath</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;number of stations:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+
+<span class="n">datapath</span> <span class="o">=</span> <span class="s2">&quot;SDI/plot&quot;</span>
+<span class="n">datapath2</span><span class="o">=</span> <span class="s2">&quot;depth_velocity&quot;</span>
+<span class="n">figpath</span>  <span class="o">=</span> <span class="s2">&quot;figs&quot;</span>
+
+<span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">fileid</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+        <span class="c1"># print fileid</span>
+        <span class="n">fileid</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">fileid</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c1"># print fileid</span>
+
+        <span class="n">plot_ac</span><span class="p">(</span><span class="n">fileid</span><span class="p">,</span> <span class="n">datapath</span><span class="o">=</span><span class="n">datapath</span><span class="p">,</span> <span class="n">datapath2</span><span class="o">=</span><span class="n">datapath2</span><span class="p">,</span> <span class="n">figpath</span><span class="o">=</span><span class="n">figpath</span><span class="p">)</span>
+        <span class="c1"># os._exit(-1)</span>
+</pre></div>
+</td></tr></table></div>
+<p><a class="reference download internal" href="../_downloads/SDI_IU.MBWA.00.BHZ.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">here</span></code></a></p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Weijia SUN.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
