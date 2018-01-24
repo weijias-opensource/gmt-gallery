@@ -1,14 +1,15 @@
 GMT galleries
 =============
 
-Updated on Jan 22, 2018
+Updated on Jan 24, 2018
 
 .. csv-table:: 
    :widths: 30, 30, 30
    
    .. image:: resources/moho_thick.jpg, .. image:: resources/wa_thermal_lithos_thickness.jpg, .. image:: resources/SDI_IU.MBWA.00.BHZ.jpg
    :doc:`resources/moho_thick`, :doc:`resources/wa_thermal_lithos_thickness`, :doc:`resources/SDI_IU.MBWA.00.BHZ`
-
+   .. image:: resources/easternChinaSn.jpg, ,
+   :doc:`resources/easternChinaSn`, ,
    
 
 
