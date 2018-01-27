@@ -8,8 +8,8 @@ Updated on Jan 24, 2018
    
    .. image:: resources/moho_thick.jpg, .. image:: resources/wa_thermal_lithos_thickness.jpg, .. image:: resources/SDI_IU.MBWA.00.BHZ.jpg
    :doc:`resources/moho_thick`, :doc:`resources/wa_thermal_lithos_thickness`, :doc:`resources/SDI_IU.MBWA.00.BHZ`
-   .. image:: resources/easternChinaSn.jpg, ,
-   :doc:`resources/easternChinaSn`, ,
+   .. image:: resources/easternChinaSn.jpg, .. image:: resources/raypath1d3d.jpg,
+   :doc:`resources/easternChinaSn`, :doc:`resources/raypath1d3d`,
    
 
 
